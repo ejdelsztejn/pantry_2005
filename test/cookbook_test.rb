@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'mocha/minitest'
 require 'date'
 require './lib/ingredient'
 require './lib/recipe'
@@ -72,8 +73,11 @@ class CookBookTest < MiniTest::Test
   end
 
   def test_it_can_return_date_created
+    skip
     cookbook = CookBook.new
-
-    assert_equal "06-03-2020", cookbook.date
+    require "pry"; binding.pry
+    assert_equal Time.stubs(:now).returns(cookbook.date), cookbook.date
   end
+
+  
 end
