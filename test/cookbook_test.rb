@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require './lib/recipe'
 require './lib/cook_book'
 
 class CookBookTest < MiniTest::Test
@@ -13,5 +14,18 @@ class CookBookTest < MiniTest::Test
     cookbook = CookBook.new
 
     assert_equal [], cookbook.recipes
+  end
+
+  def test_it_can_add_recipes
+    cookbook = CookBook.new
+    recipe1 = Recipe.new("Mac and Cheese")
+    recipe2 = Recipe.new("Cheese Burger")
+
+    assert_equal [], cookbook.recipes
+
+    cookbook.add_recipe(recipe1)
+    cookbook.add_recipe(recipe2)
+
+    assert_equal [recipe1, recipe2], cookbook.recipes
   end
 end
