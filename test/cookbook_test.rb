@@ -1,6 +1,11 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/cookbook'
+require './lib/cook_book'
 
-class CookbookTest < MiniTest::Test
+class CookBookTest < MiniTest::Test
+  def test_it_exists
+    cookbook = CookBook.new
+
+    assert_instance_of CookBook, cookbook
+  end
 end
