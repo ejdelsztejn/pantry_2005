@@ -9,6 +9,7 @@ class Recipe
   end
 
   def add_ingredient(ingredient, amount)
-    
+    @ingredients_required[ingredient] += amount
+    @ingredients << ingredient if ingredients.include?(ingredient) == false
   end
 end
