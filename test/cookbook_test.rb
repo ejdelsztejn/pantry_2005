@@ -95,7 +95,6 @@ class CookBookTest < MiniTest::Test
     cookbook.add_recipe(recipe1)
     cookbook.add_recipe(recipe2)
 
-    assert_instance_of Array, cookbook.summary
-    
+    assert_equal [{:name=>"Mac and Cheese", :details=>{:ingredients=>[{:ingredient=>"Macaroni", :amount=>"8 oz"}, {:ingredient=>"Cheese", :amount=>"2 C"}], :total_calories=>440}}, {:name=>"Burger", :details=>{:ingredients=>[{:ingredient=>"Ground Beef", :amount=>"4 oz"}, {:ingredient=>"Bun", :amount=>"100 g"}], :total_calories=>500}}], cookbook.summary
   end
 end
