@@ -6,7 +6,7 @@ class Pantry
 
   def stock_check(ingredient)
     return stock[ingredient] if stock.keys.include?(ingredient)
-    return 0
+    0
   end
 
   def restock(ingredient, amount)
