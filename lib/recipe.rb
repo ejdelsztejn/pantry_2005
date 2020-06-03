@@ -12,4 +12,8 @@ class Recipe
     @ingredients_required[ingredient] += amount
     @ingredients << ingredient if ingredients.include?(ingredient) == false
   end
+
+  def total_calories
+    ingredients.inject(0) {|sum, ingredient| sum + (ingredient.calories * ingredients_required[ingredient])}
+  end
 end
