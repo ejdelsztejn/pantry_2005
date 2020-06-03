@@ -1,5 +1,5 @@
 class Recipe
   def initialize(name)
-    @name = names
+    @name = name
   end
 end
