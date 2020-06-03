@@ -13,6 +13,6 @@ class RecipeTest < MiniTest::Test
     recipe1 = Recipe.new("Mac and Cheese")
 
     assert_equal "Mac and Cheese", recipe1.name
-    assert_equal ({}), recipe1.ingredients
+    assert_equal ({}), recipe1.ingredients_required
   end
 end
